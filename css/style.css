@@ -658,3 +658,310 @@
     border-radius: 8px; /* Facultatif : pour arrondir légèrement les coins */
 }
 
+
+
+/* From Uiverse.io by SouravBandyopadhyay */ 
+.card-title {
+    color: #262626;
+    font-size: 1.5em;
+    line-height: normal;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+  
+  .small-desc {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #452c2c;
+  }
+  
+  .small-desc {
+    font-size: 1em;
+  }
+  
+  .go-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background: linear-gradient(135deg, #6293c8, #384c6c);
+    border-radius: 0 4px 0 32px;
+  }
+  
+  .go-arrow {
+    margin-top: -4px;
+    margin-right: -4px;
+    color: white;
+    font-family: courier, sans;
+  }
+  
+  .card {
+    display: block;
+    position: relative;
+    max-width: 300px;
+    height: 320px;
+    background-color: #f2f8f9;
+    border-radius: 10px;
+    padding: 2em 1.2em;
+    margin: 12px;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .card:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, #66d1ff, #66d1ff);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.35s ease-out;
+  }
+  
+  .card:hover:before {
+    transform: scale(28);
+  }
+  
+  .card:hover .small-desc {
+    transition: all 0.5s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .card:hover .card-title {
+    transition: all 0.5s ease-out;
+    color: #ffffff;
+  }
+  
+
+
+  
+ 
+  
+  .article-card {
+    width: 350px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 300ms;
+  }
+  
+  .article-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+  
+  .article-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .article-card .content {
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    padding: 30px 20px 20px 20px;
+    height: auto;
+    bottom: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  }
+  
+  .article-card .date,
+  .article-card .title {
+    margin: 0;
+  }
+  
+  .article-card .date {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 4px;
+  }
+  
+  .article-card .title {
+    font-size: 17px;
+    color: #fff;
+  }
+  
+
+
+
+  .wrapper {
+    --color: #1F242D;
+    --color-invert: #ffffff;
+    --clip-path: circle(15px at left);
+    --clip-path-hover: circle(70px at left);
+    --clip-path-clicked: circle(100vw at left);
+    --duration: .4s;
+    --timing-function: ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .video {
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 15px;
+      clip-path: var(--clip-path);
+      transition: clip-path var(--duration) var(--timing-function);
+      video {
+        position: fixed;
+        background: #c4cbde;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .text {
+      position: relative; 
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: .2px;
+      opacity: var(--opacity, 1);
+      transition: opacity .3s var(--timing-function) .2s;
+      &::before,
+      &::after {
+        content:"";
+        position: absolute;
+        bottom: 0;
+        left: -1px;
+        right: 25px;
+        height: 0;
+      }
+      &::before {
+        box-shadow: 26px 0 0 1px var(--color);
+        right: var(--r, 100%);
+        opacity: var(--opacity, 0);
+        transition: right .5s ease-in, opacity .1s linear;
+      }
+      &::after {
+        box-shadow: 26px 0 0 1px var(--color-invert);
+        clip-path: var(--clip-path);
+        transition: clip-path var(--duration) var(--timing-function);
+      }
+      > span {
+        &::before,
+        &::after {
+          content: attr(data-text);
+          padding-left: 26px;
+        }
+        &::before {
+          color: var(--color);
+        }
+        &::after {
+          color: var(--color-invert);
+          clip-path: var(--clip-path);
+          transition: clip-path var(--duration) var(--timing-function);
+          position: absolute;
+          left: 0;
+        }
+      } 
+    }
+    input {
+      width: 220px;
+      height: 40px;
+      margin: auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      border-radius: 40px;
+      outline: none; 
+      z-index: 2;
+      appearance: none;
+      cursor: pointer;
+      &:focus {
+        outline: 0;
+      }
+      &:hover {
+        ~ .video {
+          clip-path: var(--clip-path-hover);
+        }
+        ~ .text {
+          &::before {
+            --r: 25px;
+            --opacity: 1;
+          }
+          &::after {
+            clip-path: var(--clip-path-hover);
+          }
+          > span {
+            &::after {
+              clip-path: var(--clip-path-hover);
+            }
+          }
+        }
+      }
+      &:checked {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        ~ .video {
+          clip-path: var(--clip-path-clicked);
+        }
+        ~ .text {
+          --opacity: 0;
+          transition: opacity .3s var(--timing-function);
+          &::after {
+            clip-path: var(--clip-path-clicked);
+          }
+          > span {
+            &::after {
+              clip-path: var(--clip-path-clicked);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  //--- ## BASIC #############
+  body {
+    background: #E8EBF3;
+    height: 100vh;
+    font: 400 16px 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .socials {
+      position: fixed;
+      display: block;
+      left: 20px;
+      bottom: 20px;
+      z-index: 9999;
+      > a {
+        display: block;
+        width: 30px;
+        opacity: .2;
+        transform: scale(var(--scale, .8));
+        transition: transform .3s cubic-bezier(0.38,-0.12, 0.24, 1.91);
+        &:hover {
+          --scale: 1;
+        }
+      }
+    }
+  }
