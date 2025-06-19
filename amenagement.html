@@ -98,13 +98,14 @@
                         <div class="dropdown-menu fade-up m-0">
 
                             <a href="artdetable.html" class="dropdown-item">Art de la Table</a>
-                            <a href="buanderie.html" class="dropdown-item">Buanderies</a>
-                            <a href="cuisinepro.html" class="dropdown-item">Cuissons</a>
-                            <a href="hygiene.html" class="dropdown-item">Hygiènes</a>
+                            <a href="buanderie.html" class="dropdown-item">Buanderie</a>
+                            <a href="cuisinepro.html" class="dropdown-item">Cuisson</a>
+                            <a href="hygiene.html" class="dropdown-item">Hygiène</a>
                             <a href="mobilierinox.html" class="dropdown-item">Mobilier Inox</a>
+                            <a href="preparation.html" class="dropdown-item">Preparation</a>
                             <a href="suppressionincendie.html" class="dropdown-item">Suppression Incendie</a>
-                            <a href="systemegaz.html" class="dropdown-item">Système Gaz</a>
                             <a href="chambrefroide.html" class="dropdown-item">Stockage Chaud & Froid</a>
+                            <a href="systemegaz.html" class="dropdown-item">Système Gaz</a>
                            
                         </div>
                     </div> 
@@ -113,10 +114,12 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Offres Et Services</a>
                         <div class="dropdown-menu fade-up m-0">
-                            <a href="amenagement.html" class="dropdown-item">Conception & Aménagement</a>
-                            <a href="maintenanceprev.html" class="dropdown-item">Installation & Maintenance</a>
-                            <a href="installationcuisine.html" class="dropdown-item">Services Après vente</a>
+                            <a href="amenagement.html" class="dropdown-item"> Aménagement & Conception </a>
                             <a href="formation.html" class="dropdown-item">Formations</a>
+                            <a href="maintenanceprev.html" class="dropdown-item">Installation & Maintenance</a>
+                            <a href="nettoyage.html" class="dropdown-item">Nettoyage & Désinfectation</a>
+                            <a href="installationcuisine.html" class="dropdown-item">Services Après vente</a>
+                            
 
                             
                            
@@ -200,6 +203,27 @@
                 <h4 class="mb-5">Notre équipe de professionnelle et très engagée </h4>
             </div>
             <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="teams-item">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/nosproduits/amenag.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="teams-item">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/nosproduits/amenag1.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="teams-item">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/nosproduits/amenag2.webp" alt="">
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="teams-item">
                         <div class="position-relative overflow-hidden">
@@ -330,6 +354,31 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const images = document.querySelectorAll(".img-fluid");
+      
+          images.forEach((img) => {
+            img.style.cursor = "zoom-in";
+            img.addEventListener("click", function () {
+              const popup = document.createElement("div");
+              popup.classList.add("image-popup");
+      
+              const popupImg = document.createElement("img");
+              popupImg.src = img.src;
+      
+              popup.appendChild(popupImg);
+              document.body.appendChild(popup);
+      
+              popup.addEventListener("click", function () {
+                document.body.removeChild(popup);
+              });
+            });
+          });
+        });
+      </script>
+      
 </body>
 
 </html>
