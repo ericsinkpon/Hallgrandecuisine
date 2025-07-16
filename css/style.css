@@ -634,11 +634,10 @@
     padding: 20px 0;
 }
 
-/* Piste de slide */
 .slide-track {
-    display: flex;
-    width: 200%; /* Double la largeur pour effet infini */
-    animation: scroll 10s linear infinite;
+  display: flex;
+  width: fit-content;
+  animation: scroll 30s linear infinite;
 }
 
 /* Slide individuel */
@@ -1194,7 +1193,7 @@
     color: white;
     border-radius: 50%;
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
     min-height: 280px;
     display: flex;
     flex-direction: column;
